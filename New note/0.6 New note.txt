@@ -1,0 +1,19 @@
+# script for https://www.websequencediagrams.com/ 
+note over browser: an user creates a new note on page 
+end note
+note over browser: the user clicks the submit button
+end note
+note over browser:
+browser starts executing js-code
+that posts the new note as JSON data to the server 
+and add the new note to its internal list of notes
+end note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+note over server: the server add the new note to the list of notes 
+server-->browser: {"message":"note created"}
+
+note over browser:
+browser executes the event handler
+that redraws notes to display
+end note
